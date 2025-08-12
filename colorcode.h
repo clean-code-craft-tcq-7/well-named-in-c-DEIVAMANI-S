@@ -1,4 +1,5 @@
-#pragma once
+#ifndef COLORCODE_H
+#define COLORCODE_H
 
 #define MAX_COLORPAIR_NAME_CHARS 16
 
@@ -22,3 +23,4 @@ extern int numberOfMinorColors;
 void ColorPairToString(const ColorPair* colorPair, char* buffer);
 ColorPair GetColorFromPairNumber(int pairNumber);
 int GetPairNumberFromColor(const ColorPair* colorPair);
+#endif
