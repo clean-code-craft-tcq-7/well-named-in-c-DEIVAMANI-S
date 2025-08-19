@@ -27,34 +27,9 @@ void testPairToNumber(
     assert(pairNumber == expectedPairNumber);
 }
 
-void testPrintReferenceManual() {
-    printf("Printing Reference Manual:\n");
-    char buff[100];
-    md_header(buff, 100);
-    assert(strcmp(buff, "| Pair Number | Major Color | Minor Color |\n|---|---|---|\n") == 0);
-    md_line_format(buff, 100, 1, WHITE, BLUE);
-    assert(strcmp(buff, "| 1 | White | Blue |\n") == 0);
-    printReferenceManual(md_header, md_line_format);
-}
-
-void testPrintReferenceManualCSV() {
-    printf("Printing Reference Manual in CSV format:\n");
-    char buff[100];
-    csv_header(buff, 100);
-    assert(strcmp(buff, "Pair Number,Major Color,Minor Color\n") == 0);
-    csv_line_format(buff, 100, 1, WHITE, BLUE);
-    assert(strcmp(buff, "1,White,Blue\n") == 0);
-    printReferenceManual(csv_header, csv_line_format);
-}
-
-int main() {
+void run_colorcode_tests() {
     testNumberToPair(4, WHITE, BROWN);
     testNumberToPair(5, WHITE, SLATE);
-
     testPairToNumber(BLACK, ORANGE, 12);
     testPairToNumber(VIOLET, SLATE, 25);
-
-    testPrintReferenceManual();
-    testPrintReferenceManualCSV();
-    return 0;
 }

@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <assert.h>
+#include <string.h>
+#include "colorcode.h"
+#include "colorcodeFormatter.h"
+
+void testPrintReferenceManual() {
+    printf("Printing Reference Manual:\n");
+    char buff[100];
+    md_header(buff, 100);
+    assert(strcmp(buff, "| Pair Number | Major Color | Minor Color |\n|---|---|---|\n") == 0);
+    md_line_format(buff, 100, 1, WHITE, BLUE);
+    assert(strcmp(buff, "| 1 | White | Blue |\n") == 0);
+    printReferenceManual(md_header, md_line_format);
+}
+
+void testPrintReferenceManualCSV() {
+    printf("Printing Reference Manual in CSV format:\n");
+    char buff[100];
+    csv_header(buff, 100);
+    assert(strcmp(buff, "Pair Number,Major Color,Minor Color\n") == 0);
+    csv_line_format(buff, 100, 1, WHITE, BLUE);
+    assert(strcmp(buff, "1,White,Blue\n") == 0);
+    printReferenceManual(csv_header, csv_line_format);
+}
+
+void run_formatter_tests() {
+    testPrintReferenceManual();
+    testPrintReferenceManualCSV();
+}
