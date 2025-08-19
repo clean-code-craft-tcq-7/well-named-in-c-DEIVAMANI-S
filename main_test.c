@@ -10,3 +10,6 @@ int main() {
     printf("✅ All tests passed!\n");
     return 0;
 }
+printReferenceManual(&MarkdownFormatter);
+printReferenceManual(&CsvFormatter);
+printReferenceManual(&JsonFormatter);
