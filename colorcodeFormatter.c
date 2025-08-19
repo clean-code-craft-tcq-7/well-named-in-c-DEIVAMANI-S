@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include "colorcode.h"
 #include "colorcodeFormatter.h"
 
 void md_header(char* buffer, int size) {
