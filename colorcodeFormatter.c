@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-#include "color_translation.h"
+#include "colorcodeFormatter.h"
 
 void md_header(char* buffer, int size) {
     snprintf(buffer, size, "| Pair Number | Major Color | Minor Color |\n|---|---|---|\n");
